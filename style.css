@@ -1,0 +1,320 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'DM Sans',sans-serif;
+background:#ffffff;
+color:#0a1628;
+overflow-x:hidden;
+}
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:72px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 5%;
+z-index:1000;
+transition:0.35s;
+}
+
+.navbar.scrolled{
+background:rgba(255,255,255,0.96);
+backdrop-filter:blur(18px);
+border-bottom:1px solid #e8edf5;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo-icon{
+width:32px;
+height:32px;
+background:#0a1628;
+border-radius:2px;
+}
+
+.logo-text{
+font-size:14px;
+font-weight:700;
+letter-spacing:.06em;
+text-transform:uppercase;
+}
+
+.logo-text span{
+color:#3b7bd4;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:40px;
+}
+
+.nav-links a{
+text-decoration:none;
+font-size:13px;
+font-weight:600;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:#4a5568;
+}
+
+.nav-links a:hover{
+color:#0a1628;
+}
+
+.cta-primary{
+background:#0a1628;
+color:#fff;
+border:none;
+padding:14px 32px;
+cursor:pointer;
+font-size:13px;
+font-weight:600;
+letter-spacing:.1em;
+text-transform:uppercase;
+transition:0.3s;
+}
+
+.cta-primary:hover{
+background:#1a3a6b;
+transform:translateY(-2px);
+}
+
+.cta-outline{
+background:transparent;
+border:1px solid #0a1628;
+padding:14px 32px;
+cursor:pointer;
+font-size:13px;
+font-weight:600;
+letter-spacing:.1em;
+text-transform:uppercase;
+transition:0.3s;
+}
+
+.cta-outline:hover{
+background:#0a1628;
+color:#fff;
+}
+
+.hero{
+min-height:100vh;
+padding:140px 8% 100px;
+position:relative;
+overflow:hidden;
+display:flex;
+align-items:center;
+}
+
+.grid-bg{
+position:absolute;
+inset:0;
+opacity:0.03;
+background-image:
+linear-gradient(#0a1628 1px, transparent 1px),
+linear-gradient(90deg,#0a1628 1px, transparent 1px);
+background-size:80px 80px;
+}
+
+.hero-glow{
+position:absolute;
+right:8%;
+top:20%;
+width:340px;
+height:340px;
+border-radius:50%;
+background:radial-gradient(circle, rgba(59,123,212,0.12) 0%, transparent 70%);
+}
+
+.hero-content{
+max-width:920px;
+position:relative;
+z-index:2;
+animation:fadeUp 1s ease;
+}
+
+.section-label{
+font-size:11px;
+font-weight:700;
+letter-spacing:.22em;
+text-transform:uppercase;
+color:#3b7bd4;
+margin-bottom:20px;
+}
+
+.hero-line{
+width:48px;
+height:1px;
+background:#3b7bd4;
+margin-bottom:32px;
+}
+
+.hero h1{
+font-family:'DM Serif Display',serif;
+font-size:clamp(56px,7vw,92px);
+line-height:1.04;
+letter-spacing:-0.04em;
+margin-bottom:32px;
+}
+
+.hero h1 em{
+color:#3b7bd4;
+font-style:italic;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.8;
+max-width:650px;
+color:#5a6a84;
+margin-bottom:50px;
+}
+
+.hero-buttons{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+margin-bottom:80px;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+max-width:950px;
+}
+
+.stat-card h3{
+font-size:42px;
+font-family:'DM Serif Display',serif;
+margin-bottom:8px;
+}
+
+.stat-card span{
+font-size:12px;
+letter-spacing:.14em;
+text-transform:uppercase;
+color:#8a9bb8;
+}
+
+.section{
+padding:120px 8%;
+}
+
+.light{
+background:#f7f9fc;
+}
+
+.center{
+text-align:center;
+}
+
+.title{
+font-size:clamp(40px,5vw,58px);
+font-family:'DM Serif Display',serif;
+margin-bottom:20px;
+}
+
+.sub{
+max-width:500px;
+margin:auto;
+line-height:1.8;
+color:#6b7d99;
+}
+
+.services-grid{
+margin-top:70px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:1px;
+background:#e8edf5;
+}
+
+.service-card{
+background:#fff;
+padding:42px 36px;
+transition:.35s;
+}
+
+.service-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 60px rgba(10,22,40,.08);
+}
+
+.service-icon{
+font-size:38px;
+margin-bottom:22px;
+}
+
+.service-card h3{
+font-size:22px;
+margin-bottom:14px;
+}
+
+.service-card p{
+line-height:1.8;
+color:#6b7d99;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+}
+
+.stats-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.services-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+padding-top:160px;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+}
